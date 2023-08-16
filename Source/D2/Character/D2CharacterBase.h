@@ -6,8 +6,6 @@
 #include "Actor/D2Projectile.h"
 #include "GameFramework/Character.h"
 #include "Interfaces/CombatInterface.h"
-#include "GameFramework/ProjectileMovementComponent.h" 
-
 #include "D2CharacterBase.generated.h"
 
 UCLASS()

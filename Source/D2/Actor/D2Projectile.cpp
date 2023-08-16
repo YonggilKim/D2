@@ -2,8 +2,12 @@
 
 
 #include "Actor/D2Projectile.h"
+#include "Character/D2CharacterBase.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Components/AudioComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AD2Projectile::AD2Projectile()
@@ -32,10 +36,43 @@ AD2Projectile::AD2Projectile()
 void AD2Projectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	SetLifeSpan(LifeSpan);
+
+	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AD2Projectile::OnSphereOverlap);
+
+	// LoopingSoundComponent = UGameplayStatics::SpawnSoundAttached(LoopingSound, GetRootComponent());
+
 }
 
 void AD2Projectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation(), FRotator::ZeroRotator);
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
+	// LoopingSoundComponent->Stop();
+
+	if(AD2CharacterBase* base = Cast<AD2CharacterBase>(OtherActor))
+	{
+		//base == monster
+		base->SetHealth(base->GetHealth()-10);
+	}
+	
+	bHit = true;
+	Destroy();
+
+//TODO 데미지 주기
+
+}
+
+void AD2Projectile::Destroyed()
+{
+	if (!bHit)
+	{
+		// UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation(), FRotator::ZeroRotator);
+		// UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
+		// LoopingSoundComponent->Stop();
+	}
+
+	Super::Destroyed();
 }

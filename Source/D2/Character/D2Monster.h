@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "Character/D2CharacterBase.h"
 #include "Interfaces/EnemyInterface.h"
+#include "UI/Controller/OverlayWidgetController.h"
+#include "Components/WidgetComponent.h"
+
 #include "D2Monster.generated.h"
 
 /**
@@ -25,5 +28,18 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool bHighlighted = false;
 
+	void SetMaxHealth(float value) override;
+	void SetHealth(float value) override;
+	void SetMana(float value) override;
+	void SetMaxMana(float value) override;
 
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<UWidgetComponent> HealthBar;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChangedSignature OnHealthChanged;
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnMaxHealthChangedSignature OnMaxHealthChanged;
 };
