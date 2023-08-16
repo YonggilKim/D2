@@ -4,7 +4,7 @@
     <projectFile>D2.uproject</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433b8f1d-7623-4663-8510-a6b3ac8bd734" name="Changes" comment="" />
+    <list default="true" id="5ffedc53-dc23-483d-a919-2e8fa6e759e1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,20 +13,20 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2U0qet3p5CLNnIpn4B187pvTyp3" />
+  <component name="ProjectId" id="2U3b6RQljNlylVPV9gUyBk9NrSG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.37710437&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="D2" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/D2.uproject" />
@@ -73,13 +73,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="433b8f1d-7623-4663-8510-a6b3ac8bd734" name="Changes" comment="" />
-      <created>1692086946767</created>
+      <changelist id="5ffedc53-dc23-483d-a919-2e8fa6e759e1" name="Changes" comment="" />
+      <created>1692171037117</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1692086946767</updated>
-      <workItem from="1692087014121" duration="15519000" />
-      <workItem from="1692118167829" duration="626000" />
+      <updated>1692171037117</updated>
+      <workItem from="1692171108384" duration="3298000" />
     </task>
     <servers />
   </component>
@@ -101,16 +100,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/D2/Controller/D2PlayerController.cpp</url>
-          <line>80</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

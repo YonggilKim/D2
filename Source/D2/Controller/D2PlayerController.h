@@ -43,7 +43,9 @@ private:
 	void TickCursorTrace();
 	IEnemyInterface* TargetActor;
 public:
-UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
 	TObjectPtr<AD2CharacterBase> Target;
 
+	UPROPERTY(EditAnywhere, Category="Input")
+	TObjectPtr<UInputAction> ShiftAction;
 };

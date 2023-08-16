@@ -48,7 +48,15 @@ void AD2PlayerController::BeginPlay()
 	}
 }
 
+void AD2PlayerController::SetupInputComponent()
+{
+	Super::SetupInputComponent();
 
+	UEnhancedInputComponent* EnhancedInputComponent =  CastChecked<UEnhancedInputComponent>(InputComponent);
+	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AD2PlayerController::Move);
+	EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Completed, this, &AD2PlayerController::Attack);
+
+}
 
 void AD2PlayerController::PlayerTick(float DeltaTime)
 {
@@ -73,27 +81,7 @@ void AD2PlayerController::Move(const FInputActionValue& Value)
 	}
 }
 
-// void AD2PlayerController::Attack(const FInputActionValue& Value) 
-// {
-// 	GEngine->AddOnScreenDebugMessage(-1,2, FColor::Yellow, TEXT("Attack!"));
-// 	if (Target)
-// 	{
-// 		if (AD2Player* player = Cast<AD2Player>(GetPawn()))
-// 		{
-// 			player->SpawnProjectile(Target->GetActorLocation());
-// 		}
-// 	}
-// }
 
-void AD2PlayerController::SetupInputComponent()
-{
-	Super::SetupInputComponent();
-
-	UEnhancedInputComponent* EnhancedInputComponent =  CastChecked<UEnhancedInputComponent>(InputComponent);
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AD2PlayerController::Move);
-	EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Completed, this, &AD2PlayerController::Attack);
-
-}
 
 void AD2PlayerController::TickCursorTrace()
 {

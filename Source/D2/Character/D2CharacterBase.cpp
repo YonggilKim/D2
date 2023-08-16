@@ -2,6 +2,8 @@
 
 
 #include "Character/D2CharacterBase.h"
+
+#include "Components/CapsuleComponent.h"
 // Sets default values
 AD2CharacterBase::AD2CharacterBase()
 {
@@ -10,6 +12,9 @@ AD2CharacterBase::AD2CharacterBase()
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Weapon"));
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
 	Weapon->SetCollisionEnabled((ECollisionEnabled::NoCollision));
+
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
 }
 
 // Called when the game starts or when spawned
